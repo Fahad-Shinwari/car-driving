@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            http-equiv="X-UA-Compatible"
+            content="IE=edge"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <title>Self-Driving Car</title>
+        <link
+            rel="stylesheet"
+            href="styles.css"
+        />
+        <script
+            src="./visualizer.js"
+            defer
+        ></script>
+        <script
+            src="./network.js"
+            defer
+        ></script>
+        <script
+            src="./sensor.js"
+            defer
+        ></script>
+        <script
+            src="./utils.js"
+            defer
+        ></script>
+        <script
+            src="./road.js"
+            defer
+        ></script>
+        <script
+            src="./controls.js"
+            defer
+        ></script>
+        <script
+            src="./car.js"
+            defer
+        ></script>
+        <script
+            src="./main.js"
+            defer
+        ></script>
+    </head>
+    <body>
+        <canvas id="carCanvas"></canvas>
+        <div id="verticalButtons">
+            <button onclick="save()">💾</button>
+            <button onclick="discard()">🗑️</button>
+            <div class="dropdown">
+                🧬
+                <select
+                    name="mutationAmount"
+                    id="mutationAmount"
+                    onchange="localStorage.setItem('mutationAmount',this.value)"
+                >
+                    <option value="0.1">0.1</option>
+                    <option value="0.2">0.2</option>
+                    <option value="0.3">0.3</option>
+                    <option value="0.4">0.4</option>
+                    <option
+                        value="0.5"
+                        selected
+                    >
+                        0.5
+                    </option>
+                    <option value="0.6">0.6</option>
+                    <option value="0.7">0.7</option>
+                    <option value="0.8">0.8</option>
+                    <option value="0.9">0.9</option>
+                    <option value="1.0">1.0</option>
+                </select>
+            </div>
+            <div class="dropdown">
+                🚗
+                <select
+                    name="carCount"
+                    id="carCount"
+                    onchange="localStorage.setItem('carCount', this.value)"
+                >
+                    <option
+                        value="1"
+                        selected
+                    >
+                        1
+                    </option>
+                    <option value="10">10</option>
+                    <option value="100">100</option>
+                    <option value="1000">1000</option>
+                </select>
+            </div>
+        </div>
+        <canvas id="networkCanvas"></canvas>
+    </body>
+</html>
